@@ -13,12 +13,12 @@ class App extends Component {
             <nav>
               <ul>
                 <li>
-                  {/* <NavLink to="/courses">Courses</NavLink> */}
-                  <a href="/courses">Courses</a>
+                  <NavLink to="/courses">Courses</NavLink>
+                  {/* <a href="/courses">Courses</a> */}
                 </li>
                 <li>
-                  {/* <NavLink to="/users">Users</NavLink> */}
-                  <a href="/users">Users</a>
+                  <NavLink to="/users">Users</NavLink>
+                  {/* <a href="/users">Users</a> */}
                 </li>
               </ul>
             </nav>
