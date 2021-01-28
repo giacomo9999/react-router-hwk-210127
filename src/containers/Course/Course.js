@@ -5,9 +5,10 @@ class Course extends Component {
     console.log("Course here...", this.props);
     return (
       <div className="container-inner">
-        <h1>_COURSE_TITLE_</h1>
-        <p>You selected the Course with ID: _ID_</p>
-        <p>{this.props.match.url}</p>
+        <h1>{this.props.title}</h1>
+        <p style={{ color: "white" }}>
+          You selected the Course with ID: {this.props.match.params.id}
+        </p>
       </div>
     );
   }

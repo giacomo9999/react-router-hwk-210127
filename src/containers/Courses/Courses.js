@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Route, BrowserRouter } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 
 import Course from "../Course/Course";
 
@@ -30,7 +30,17 @@ class Courses extends Component {
             );
           })}
         </section>
-        <Route path={this.props.match.url + "/:id"} component={Course} />
+        <Route
+          path={this.props.match.url + "/:id"}
+          render={(props) => (
+            <Course
+              {...props}
+              title={
+                this.state.courses[Number(props.match.params.id) - 1].title
+              }
+            />
+          )}
+        />
       </div>
     );
   }

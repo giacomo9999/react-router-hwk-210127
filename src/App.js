@@ -1,8 +1,15 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, NavLink } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  NavLink,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 
 import Courses from "./containers/Courses/Courses";
 import Users from "./containers/Users/Users";
+import NoMatchPage from "./NoMatchPage";
 
 class App extends Component {
   render() {
@@ -21,8 +28,12 @@ class App extends Component {
               </ul>
             </nav>
           </header>
-          <Route path="/courses" component={Courses} />
-          <Route path="/users" component={Users} />
+          <Switch>
+            <Redirect from="/all-courses" to="/courses" />
+            <Route path="/courses" component={Courses} />
+            <Route path="/users" component={Users} />
+            <Route component={NoMatchPage} />
+          </Switch>
         </div>
       </BrowserRouter>
     );
