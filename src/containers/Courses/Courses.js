@@ -15,7 +15,7 @@ class Courses extends Component {
   };
 
   render() {
-    console.log(this.props);
+    console.log("Courses props: ", this.props);
     return (
       <div>
         <h1>Amazing Udemy Courses</h1>
